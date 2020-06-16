@@ -72,7 +72,7 @@
                                                         <li><a href="https://github.com/saikrishna62892/Gate_Notes.git" target="_blank">Gate Notes</a></li>
                                                         <li><a href="https://docs.google.com/spreadsheets/d/1nxPSIULehCO7X91W5W9yq9D4hKyHiwBtm4hYutksLnI/edit?usp=sharing" target="_blank">Interview Q&A</a></li>
                                                         <li><a href="articles.html">Articles</a></li>
-                                                        <li><a href="bpresentations.html">Presentations</a></li>
+                                                        <li><a href="presentations.html">Presentations</a></li>
                                                         <li><a href="https://github.com/saikrishna62892/Mtech-sem1-Assignments.git" target="_blank">Assigments</a></li>
                                                     </ul>
                                                 </li>
@@ -81,8 +81,8 @@
                                                         <li><a href="projects.html">Projects</a></li>
                                                         <li><a href="courses.html">Courses</a></li>
                                                         <li><a href="certificates.html">Certificates</a></li>
-                                                        <li><a href="honors.html">Honors</a></li>
-                                                        <li><a href="exams.html">Exams</a></li>
+                                                        <li><a href="honors&exams.html">Honors</a></li>
+                                                        <li><a href="honors&exams.html">Exams</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="#">Courses</a>
@@ -99,9 +99,11 @@
                                                         <li><a href="https://drive.google.com/file/d/1BpqGTaAKEY1mLJnDSxSUNuK3cx4nR36M/view?usp=sharing" target="_blank">Theory of Computation</a></li>
                                                     </ul>
                                                 </li>
+                                                <li><a href="#slide_down_sk">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
+
                                     <div class="header-right-btn f-right d-none d-xl-block ml-20">
                                         <a href="https://docs.google.com/document/d/1aKsyFIwVnAIcUFW8DKyoKKxJ-BvB1MD9QvQfzUVrTOE/edit?usp=sharing" class="btn header-btn" target="_blank">Download Resume</a>
                                     </div>
@@ -129,7 +131,7 @@
                             <div class="col-xl-8 col-lg-7 col-md-9">
                                 <div class="hero__caption">
                                     <span data-animation="fadeInUp" data-delay=".4s">Carrer Objective</span>
-                                    <h1 data-animation="fadeInUp" data-delay=".6s"> i'm an MTech Stud pursuing CS @ NITC</h1>
+                                    <h1 data-animation="fadeInUp" data-delay=".6s"> i'm an MTech Student pursuing CS @ NITC</h1>
                                     <P data-animation="fadeInUp" data-delay=".8s" >To pursue a challenging career and be a part of progressive organization that gives a scope to enhance my knowledge and utilizing my skills towards the growth of the organization.</P>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn">
@@ -240,6 +242,15 @@
                             </div>
                         </div>
                     </div>
+                    <div style="margin: auto;">
+                        <center>
+                            <iframe style="height:455px; width:351px; border: none;" width="351" height="465" frameborder="0" scrolling="no" allowtransparency="true" src="http://print-sudoku.com/play-sudoku_external.php">As your browser does not support Iframes the Sudoku from print-sudoku.com cannot be displayed.</iframe>
+                            <p>
+                                <a title="Sudoku" href="http://print-sudoku.com/">Sudoku</a>
+                                <a title="Sudoku online" href="http://print-sudoku.com/print-sudoku.php">Print Sudoku</a>
+                            </p>
+                        </center>
+                    </div>
                  </div>
             </div>
         </section>
@@ -247,7 +258,7 @@
     </main>
     <footer>
         <!-- Footer Start-->
-        <div class="footer-area">
+        <div class="footer-area" id="slide_down_sk">
             <div class="container">
                 <div class="footer-bottom">
                     <div class="row d-flex justify-content-between align-items-center">
@@ -325,6 +336,19 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="./assets/js/plugins.js"></script>
         <script src="./assets/js/main.js"></script>
-        
+        <script>
+            let anchorlinks = document.querySelectorAll('a[href^="#"]')
+            for (let item of anchorlinks) { // relitere 
+                item.addEventListener('click', (e)=> {
+                    let hashval = item.getAttribute('href')
+                    let target = document.querySelector(hashval)
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    })
+                    history.pushState(null, null, hashval)
+                    e.preventDefault()
+                })
+            }
+        </script>
     </body>
 </html>
